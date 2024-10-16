@@ -4,23 +4,26 @@ import "fmt"
 
 func main() {
 
-	var language = "Golang"
+	var studyItem1 = "Watch golang tutorial"
+	var studyItem2 = "Study about microservices"
+
+	var workItem1 = "Create golang Todo App"
+	var workItem2 = "Create microservices app for demonstartion."
+
+	var taskItems = []string{studyItem1, studyItem2, workItem1, workItem2}
 
 	fmt.Println("### GoLang TodoList App ###")
 
+	fmt.Println("List of my Todos")
 	fmt.Println()
-	fmt.Println("Study")
-	fmt.Printf("Watch %s tutorial.\n", language)
-	fmt.Println("Study about microservices")
+	
+	for index, task := range taskItems{
+		// fmt.Println(index + 1 , ".", task)
+		fmt.Printf("%d. %s\n", index+1, task)
+	}
+	
+	
+	//fmt.Println("Tasks", taskItems)
 
-	fmt.Println()
-	fmt.Println("Work")
-	fmt.Printf("Create %s Todo App\n", language)
-	fmt.Println("Create microservices app for demonstartion.")
-
-	fmt.Println()
-	fmt.Println("Fun")
-	fmt.Printf("Write story about %s Journey\n", language)
-	fmt.Println("Create fun AI app")
 
 }
