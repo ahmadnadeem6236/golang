@@ -15,12 +15,12 @@ func main() {
 
 	fmt.Println()
 	fmt.Println("Work")
-	fmt.Println("Create Golang Todo App")
+	fmt.Printf("Create %s Todo App\n", language)
 	fmt.Println("Create microservices app for demonstartion.")
 
 	fmt.Println()
 	fmt.Println("Fun")
-	fmt.Println("Write story about Golang Journey")
+	fmt.Printf("Write story about %s Journey\n", language)
 	fmt.Println("Create fun AI app")
 
 }
