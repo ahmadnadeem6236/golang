@@ -3,11 +3,14 @@ package main
 import "fmt"
 
 func main() {
+
+	var language = "Golang"
+
 	fmt.Println("### GoLang TodoList App ###")
 
 	fmt.Println()
 	fmt.Println("Study")
-	fmt.Println("Watch Golang tutorial.")
+	fmt.Printf("Watch %s tutorial.\n", language)
 	fmt.Println("Study about microservices")
 
 	fmt.Println()
