@@ -2,10 +2,25 @@ package main
 
 import (
 	"fmt"
+	"os"
+	"strconv"
 )
 
+func getBalFromFile() float64 {
+	accountbal, _ := os.ReadFile("balance.txt")
+	balTxt := string(accountbal)
+	mainBal, _ := strconv.ParseFloat(balTxt, 64)
+	return mainBal
+
+}
+
+func writeBalToFile(balance float64) {
+	accountbalance := fmt.Sprint(balance)
+	os.WriteFile("balance.txt", []byte(accountbalance), 0644)
+}
+
 func main() {
-	accountBal := 1000.00
+	accountBal := getBalFromFile()
 
 	fmt.Println("Welcome to the bank!")
 
@@ -39,6 +54,7 @@ func main() {
 
 			accountBal += depositAmount
 			fmt.Println("New Update Balance:", accountBal)
+			writeBalToFile(accountBal)
 		} else if choice == 3 {
 			fmt.Println("######### Withdraw Money #########")
 			fmt.Print("Enter amount to withdraw: ")
@@ -46,6 +62,7 @@ func main() {
 			fmt.Scan(&withDrawAmount)
 			accountBal -= withDrawAmount
 			fmt.Println("Your new Balance:", accountBal)
+			writeBalToFile(accountBal)
 		} else if choice == 4 {
 			fmt.Println("Goodbye!")
 			break
