@@ -18,6 +18,9 @@ func main() {
 		return
 	}
 
+	appAdmin := user.NewAdmin("nadem@", "nad123", "Ahmad", "Nadeem")
+	appAdmin.OutputAdminData()
+
 	appUser.OutputUserData()
 }
 
