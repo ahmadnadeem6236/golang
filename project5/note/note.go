@@ -31,15 +31,16 @@ func (note Note) Display() {
 	fmt.Printf("You note titled %v has the following content:\n%v\n", note.Title, note.Content)
 }
 
-func (note Note) Save() {
+func (note Note) Save() error {
 	filename := strings.Replace(note.Title, " ", "_", -1)
 	filename = strings.ToLower(filename) + ".json"
 
 	json, err := json.Marshal(note)
 	if err != nil {
 		fmt.Println(err)
-		return
+		return err
 	}
 
 	os.WriteFile(filename, json, 0644)
+	return nil
 }
